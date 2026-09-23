@@ -339,12 +339,17 @@ border-radius:50%;
 background:transparent;
 color:#D4AF37;
 font-size:26px;
-font-weight:500
+font-weight:500;
+touch-action:manipulation;
+-webkit-user-select:none;
+user-select:none;
+-webkit-tap-highlight-color:transparent;
+cursor:pointer
 }
 
 .keys button:active{
 background:rgba(255,208,0,.15);
-transform:scale(.92)
+transform:scale(.96)
 }
 
 .keys .operator{
@@ -422,7 +427,8 @@ padding:8px 2px
 
 .keys button{
 height:60px;
-font-size:24px
+font-size:24px;
+touch-action:manipulation
 }
 
 .keys .equal{
@@ -2666,22 +2672,7 @@ calcClear();
 </script>
 
 
-<script>
-(function(){
-  let lastTouchEnd = 0;
-  document.addEventListener('touchend', function(event){
-    const now = Date.now();
-    if (now - lastTouchEnd <= 300) {
-      event.preventDefault();
-    }
-    lastTouchEnd = now;
-  }, {passive:false});
 
-  document.addEventListener('dblclick', function(event){
-    event.preventDefault();
-  }, {passive:false});
-})();
-</script>
 </body>
 </html>
  
