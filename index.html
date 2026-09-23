@@ -3,9 +3,9 @@
 <head>
 <meta name="calculator-version" content="CALPROEXPERT-CALCULADORA-COMPLETA-2026-09-23">
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
 <title>CALPROEXPERT</title>
-<meta name="version" content="CALPROEXPERT-2026-09-23-GOLD-LOGO-FIX-INFO-V1-NO-INSTALL">
+<meta name="version" content="CALPROEXPERT-2026-09-23-MOBILE-COMPACT-NO-HISTORY">
 <meta name="theme-color" content="#0b0e10">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -16,6 +16,18 @@
 <link rel="apple-touch-icon" href="./icon-180.png">
 
 <style>
+html,body{
+-webkit-text-size-adjust:100%;
+-ms-text-size-adjust:100%;
+-webkit-touch-callout:none;
+}
+html{
+ touch-action:manipulation;
+}
+button,a,input,select,textarea{
+ touch-action:manipulation;
+}
+
 *{
 box-sizing:border-box;
 -webkit-tap-highlight-color:transparent
@@ -480,7 +492,8 @@ color:#111
 }
 
 .light-theme .logo{
-background:transparent !important;
+background:#000 !important;
+border:2px solid #000 !important;
 border-radius:10px;
 overflow:hidden
 }
@@ -516,6 +529,223 @@ color:#111
 .calc-card .keys button[data-action="reciprocal"]{
   font-weight:800;
 }
+
+/* =================================================
+   AJUSTE MOBILE — TUDO MAIS COMPACTO
+   Mantém o conteúdo e reduz apenas espaçamentos/tamanhos
+   para melhor aproveitamento da tela do celular.
+================================================= */
+@media (max-width:600px){
+  html,body{overflow-x:hidden}
+
+  .app{
+    min-height:100vh;
+    padding:4px 5px 8px;
+  }
+
+  .container{max-width:100%;}
+
+  .tabs{
+    width:100%;
+    gap:3px;
+    margin-bottom:4px;
+    overflow:visible;
+  }
+
+  .tabs button{
+    flex:1 1 0;
+    min-width:0;
+    padding:7px 2px;
+    border-radius:9px;
+    font-size:9px;
+    line-height:1.05;
+    white-space:normal;
+  }
+
+  .logo{
+    width:82%;
+    border-radius:8px;
+  }
+
+  .title{
+    margin:3px 0 6px;
+  }
+
+  .title h1{font-size:21px;line-height:1.05}
+  .title p{font-size:10px;margin-top:2px}
+
+  .margin-card,
+  .calc-card{
+    border-radius:16px;
+    border-width:2px;
+    padding:9px;
+  }
+
+  .commercial-tabs{
+    gap:3px;
+    margin-bottom:7px;
+  }
+
+  .commercial-tabs button{
+    border-radius:8px;
+    padding:7px 1px;
+    font-size:9px;
+    line-height:1;
+  }
+
+  .field{margin-bottom:7px}
+  .field label{
+    margin-bottom:3px;
+    font-size:10px;
+  }
+
+  .input-box{
+    height:40px;
+    border-width:1px;
+    border-radius:9px;
+  }
+
+  .input-box span{
+    padding:0 9px;
+    font-size:11px;
+  }
+
+  .input-box input{
+    font-size:17px;
+    padding:0 8px;
+  }
+
+  .results{gap:4px}
+
+  .result{
+    border-radius:10px;
+    padding:7px 4px;
+  }
+
+  .result h3{font-size:9px}
+  .result .value{margin-top:3px;font-size:16px}
+  .result p{margin-top:2px;font-size:8px}
+
+  .clear-margin{
+    height:38px;
+    margin-top:6px;
+    border-radius:10px;
+    font-size:11px;
+  }
+
+  .memory button{
+    height:25px;
+    font-size:9px;
+  }
+
+  .display{
+    min-height:84px;
+    padding:6px 9px;
+    border-radius:12px;
+  }
+
+  .expression{
+    min-height:22px;
+    font-size:14px;
+  }
+
+  .result-display{
+    font-size:34px;
+  }
+
+  .keys{
+    gap:1px;
+    margin-top:1px;
+  }
+
+  .keys button{
+    height:49px;
+    border-radius:50%;
+    font-size:21px;
+  }
+
+  .keys .operator{font-size:23px}
+
+  .keys .equal{
+    width:58px;
+    height:58px;
+    font-size:27px;
+  }
+
+  .info-card{
+    border-width:2px;
+    border-radius:16px;
+    padding:9px;
+    margin-bottom:7px;
+  }
+
+  .info-card h2{
+    margin:0 0 6px;
+    font-size:14px;
+  }
+
+  .info-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+    gap:5px;
+  }
+
+  .info-option{
+    border-radius:9px;
+    padding:7px;
+    min-width:0;
+  }
+
+  .info-option strong{
+    margin-bottom:3px;
+    font-size:9px;
+  }
+
+  .info-card p{
+    margin:3px 0;
+    line-height:1.2;
+    font-size:9px;
+  }
+
+  .theme-select{
+    padding:7px 6px;
+    border-width:1px;
+    border-radius:8px;
+    font-size:10px;
+  }
+
+  .ad-space{
+    min-height:45px;
+    margin-top:6px;
+    border-radius:9px;
+    font-size:8px;
+    letter-spacing:.7px;
+  }
+
+  .footer{
+    padding:5px 0 0;
+    font-size:7px;
+  }
+
+  .footer strong{font-size:8px}
+}
+
+@media (max-width:360px){
+  .tabs button{font-size:8px;padding:6px 1px}
+  .logo{width:76%}
+  .title h1{font-size:19px}
+  .title p{font-size:9px}
+  .margin-card,.calc-card{padding:7px}
+  .commercial-tabs button{font-size:8px;padding:6px 1px}
+  .input-box{height:37px}
+  .input-box input{font-size:16px}
+  .result .value{font-size:14px}
+  .keys button{height:45px;font-size:19px}
+  .keys .operator{font-size:21px}
+  .keys .equal{width:53px;height:53px;font-size:25px}
+  .info-card p{font-size:8px}
+  .info-option{padding:6px}
+}
+
 </style>
 <style>
 .about-story{margin-top:16px;padding:18px;border:1px solid #D4AF37;border-radius:14px;background:rgba(212,175,55,.06);line-height:1.6}.about-story h3{margin:0 0 12px;color:#D4AF37;font-size:16px}.about-story p{margin:0 0 10px}.about-story p:last-child{margin-bottom:0}</style>
@@ -2334,14 +2564,23 @@ calcClear();
 
 </script>
 
-<div class="about-story">
-<h3>HISTÓRIA DO CALPRO EXPERT</h3>
-<p>O CALPRO EXPERT nasceu de uma necessidade simples: transformar cálculos comerciais do dia a dia em algo mais rápido, prático e fácil de entender.</p>
-<p>Durante minha rotina profissional, percebi que muitas decisões dependiam de cálculos de margem, preço, desconto e markup. Foi então que surgiu a ideia de criar uma ferramenta que reunisse tudo isso em um só lugar.</p>
-<p>Comecei o projeto com o objetivo de facilitar a rotina de quem trabalha com vendas e precisa tomar decisões com agilidade.</p>
-<p>Assim nasceu o CALPRO EXPERT: desenvolvido para transformar cálculos em decisões mais simples.</p>
-<p><strong>Criado e desenvolvido por João Siena.</strong></p>
-</div>
+
+<script>
+(function(){
+  let lastTouchEnd = 0;
+  document.addEventListener('touchend', function(event){
+    const now = Date.now();
+    if (now - lastTouchEnd <= 300) {
+      event.preventDefault();
+    }
+    lastTouchEnd = now;
+  }, {passive:false});
+
+  document.addEventListener('dblclick', function(event){
+    event.preventDefault();
+  }, {passive:false});
+})();
+</script>
 </body>
 </html>
  
