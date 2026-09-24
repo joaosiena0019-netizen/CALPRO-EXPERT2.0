@@ -849,7 +849,7 @@ color:#111
   .input-box input{font-size:19px}
   .result .value{font-size:18px}
   .display{min-height:104px}
-  .result-display{font-size:37px}
+  .result-display{font-size:33px}
   .keys button{height:55px;font-size:22px}
   .keys .equal{width:63px;height:63px;font-size:28px}
   .info-card p{font-size:9px}
@@ -1368,25 +1368,7 @@ data-action="clear">
 AC
 </button>
 
-<button data-action="sqrt">
-√
-</button>
-
-<button data-action="square">
-x²
-</button>
-
-<button data-action="reciprocal">
-1/x
-</button>
-
-<button
-data-action="back">
-⌫
-</button>
-
-<button
-data-action="percent">
+<button data-action="percent">
 %
 </button>
 
@@ -1394,6 +1376,11 @@ data-action="percent">
 class="operator"
 data-operator="/">
 ÷
+</button>
+
+<button
+data-action="back">
+⌫
 </button>
 
 
@@ -1407,12 +1394,6 @@ data-operator="/">
 class="operator"
 data-operator="*">
 ×
-</button>
-
-<button
-class="operator"
-data-operator="^">
-xʸ
 </button>
 
 
@@ -2719,3 +2700,53 @@ calcClear();
 </body>
 </html>
  
+<style>
+/* CALPRO EXPERT — ajuste final da calculadora */
+@media (max-width:600px){
+  .result-display{
+    font-size:36px !important;
+    letter-spacing:-1.1px;
+  }
+
+  .keys{
+    grid-template-columns:repeat(4,1fr);
+    gap:2px;
+  }
+
+  .keys button{
+    height:60px;
+    font-size:23px;
+  }
+
+  .keys .operator{
+    font-size:25px;
+  }
+
+  .keys .equal{
+    width:67px;
+    height:67px;
+    font-size:30px;
+  }
+}
+
+@media (max-width:360px){
+  .result-display{
+    font-size:33px !important;
+  }
+
+  .keys button{
+    height:54px;
+    font-size:21px;
+  }
+
+  .keys .operator{
+    font-size:23px;
+  }
+
+  .keys .equal{
+    width:62px;
+    height:62px;
+    font-size:28px;
+  }
+}
+</style>
